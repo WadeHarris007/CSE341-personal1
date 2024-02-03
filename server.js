@@ -1,29 +1,42 @@
+//implement express
 const express = require('express');
+
 const bodyParser = require('body-parser');
-const app = express();
+
+//creating a folder and file to store our data
 const mongodb = require('./data/database');
 
+const app = express();
 
-const port = process.env.PORT || 8090;
+//setting port to 7000
+const port = process.env.PORT || 7000;
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
     );
-    res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
-})
+  })
 
+//this is to include the folder routes when we need code from routes
 app.use('/', require('./routes'));
 
-mongodb.initDb((err, mongodb) => {
-    if (err) {
+
+
+
+
+mongodb.initDb((err) => {
+    if(err) {
         console.log(err);
-    } else {
+    
+    }
+    else {
         app.listen(port, () => {
-    console.log(`Database is listening and node Runing on port ${port}!`)});
-        }});
+            console.log(`Database and node is running on port ${port})`)});
+    }
+
+});

@@ -3,10 +3,14 @@ const router = require('express').Router();
 router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
-   //#swagger.Tags = ['hello world!]
-     res.send('Hello Friend, You are Welcome!');
-  });
+    res.send('Hello World');
+});
 
-  router.use('/carParts', require('./carParts'));
+//any get request (basically a / sign) will be processed here
+//router.get('/', (req, res) => { res.send('Hello world');});
 
-  module.exports = router;
+
+
+router.use('/carParts' , require('./carParts'));
+
+module.exports = router;
