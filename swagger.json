@@ -54,25 +54,25 @@
               "type": "object",
               "properties": {
                 "carModel": {
-                  "example": "any"
+                  "example": "320i"
                 },
                 "carType": {
-                  "example": "any"
+                  "example": "BMW"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "jd@gmail.com"
                 },
                 "firstName": {
-                  "example": "any"
+                  "example": "Jason"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Derulo"
                 },
                 "partNeeded": {
-                  "example": "any"
+                  "example": "Starter"
                 },
                 "yearModel": {
-                  "example": "any"
+                  "example": "2013"
                 }
               }
             }
@@ -124,25 +124,25 @@
               "type": "object",
               "properties": {
                 "carModel": {
-                  "example": "any"
+                  "example": "A3"
                 },
                 "carType": {
-                  "example": "any"
+                  "example": "Audi"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "gh@gmail.com"
                 },
                 "firstName": {
-                  "example": "any"
+                  "example": "Greg"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Holmes"
                 },
                 "partNeeded": {
-                  "example": "any"
+                  "example": "Gearbox"
                 },
                 "yearModel": {
-                  "example": "any"
+                  "example": "2022"
                 }
               }
             }
