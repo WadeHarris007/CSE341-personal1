@@ -5,7 +5,7 @@ const doc = {
     title: 'carParts API',
     description: 'carParts API',
   },
-  host: 'localhost:8085',
+  host: 'localhost:8090',
   schemes: ['https', 'http'],
 };
 
