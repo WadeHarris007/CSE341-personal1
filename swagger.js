@@ -1,3 +1,4 @@
+//swagger-autogen implementation for swagger use
 const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
@@ -12,5 +13,5 @@ const doc = {
 const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
 
-// generate swagger.json
+// This is to generate the swagger.json
 swaggerAutogen(outputFile, endpointsFiles, doc);

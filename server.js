@@ -1,9 +1,9 @@
-//implement express
 const express = require('express');
 
+//Impelement body-parser
 const bodyParser = require('body-parser');
 
-//creating a folder and file to store our data
+//mongodb will store our data
 const mongodb = require('./data/database');
 
 const app = express();
@@ -22,13 +22,13 @@ app.use((req, res, next) => {
     next();
   })
 
-//this is to include the folder routes when we need code from routes
+//Include routes folder 
 app.use('/', require('./routes'));
 
 
 
 
-
+//Confirmation on port
 mongodb.initDb((err) => {
     if(err) {
         console.log(err);
