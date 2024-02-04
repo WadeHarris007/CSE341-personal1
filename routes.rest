@@ -1,0 +1,23 @@
+// LOCALHOST ### Get all contacts 
+GET http://localhost:7000/contacts
+
+//Get contact by id 
+GET http://localhost:7000/carParts/65be0937a132c331e8f38ff8
+
+//Create contact 
+POST http://localhost:7000/carParts HTTP/1.1
+content-type: application/json
+
+{
+"carModel":"320i", "carType":"BMW", "email":"jd@gmail.com", "firstName":"Jason", "lastName":"Derulo", "partNeeded":"Starter", "yearModel":"2013"
+}
+
+//PUT contact 
+PUT http://localhost:7000/contacts/65be92beefc0e1f2f9b019aa HTTP/1.1
+content-type: application/json
+
+{
+"carModel":"A3", "carType":"Audi", "email":"gh@gmail.com", "firstName":"Greg", "lastName":"Holmes", "partNeeded":"Gearbox", "yearModel":"2022"
+} 
+
+
