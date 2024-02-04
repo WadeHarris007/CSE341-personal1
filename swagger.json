@@ -5,11 +5,10 @@
     "description": "carParts API",
     "version": "1.0.0"
   },
-  "host": "localhost:7000",
+  "host": "//personal1-uz0i.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
