@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const passport = require('passport');
 
 //Require swagger
 router.use('/', require('./swagger'));

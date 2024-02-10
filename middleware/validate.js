@@ -1,4 +1,3 @@
-const validator = require('../searchPaths/validate');
 
 const saveCarPartsdetails = (req, res, next) => {
   const validationRule = {
@@ -10,6 +9,7 @@ const saveCarPartsdetails = (req, res, next) => {
     partNeeded: 'required|string',
     yearModel: 'required|string'
   };
+  
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
