@@ -1,5 +1,6 @@
+const validator = require('../helpers/validate');
 
-const saveCarPartsdetails = (req, res, next) => {
+const savecarParts = (req, res, next) => {
   const validationRule = {
     carModel: 'required|string',
     carType: 'required|string',
@@ -24,5 +25,5 @@ const saveCarPartsdetails = (req, res, next) => {
 };
 
 module.exports = {
-  saveCarPartsdetails
+  savecarParts
 };

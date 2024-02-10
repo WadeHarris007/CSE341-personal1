@@ -1,3 +1,6 @@
+//include passport
+const passport = require('passport');
+
 const express = require('express');
 
 //Impelement body-parser
@@ -5,9 +8,6 @@ const bodyParser = require('body-parser');
 
 //mongodb will store our data
 const mongodb = require('./data/database');
-
-//include passport
-const passport = require('passport');
 
 //include express-session
 const session = require('express-session');
@@ -77,7 +77,7 @@ app.get('/github/callback', passport.authenticate('github', {
     failureRedirect: '/api-docs', session:false}), (req, res) => {
         req.session.user = req.user; 
         res.redirect('/'); 
-    });
+});
 
 
 
