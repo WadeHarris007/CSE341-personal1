@@ -9,6 +9,7 @@ const ObjectId = require('mongodb').ObjectId;
 //Declare get all function to get all data 
 //in the database
 const getAll = async (req, res) => {
+
     const result = await mongodb.getDatabase().db().collection('carParts').find();
     result.toArray().then((carParts)  => {
 
@@ -25,6 +26,7 @@ const getAll = async (req, res) => {
 //Create a getSingle function
 
 const getSingle = async (req, res) => {
+
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('carParts').find({_id: userId});
     result.toArray().then((carParts)  => {
@@ -101,6 +103,7 @@ const updatecarPart = async (req, res) => {
 //This is to delete an item in the database
 
 const deletecarPart = async (req, res) => {
+    
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db().collection('carParts').deleteOne({_id: userId});
 

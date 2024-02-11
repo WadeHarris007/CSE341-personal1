@@ -30,12 +30,17 @@ app
     resave: false,
     saveUninitialized: true,
 }))
-// This is the basic express session({..}) initialisation.
+//start expression
 .use(passport.initialize())
-// init passport on every route call
+
+
+//passport to routes
 .use(passport.session())
-// allow passport to use "express-session".
+
+
+//passport to express-session
 .use((req, res, next) => {
+
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
     "Access-Control-Allow-Headers",
@@ -48,16 +53,24 @@ app
     next();
 })
 
+//use cors
 .use(cors({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']}))
+
 .use(cors({ origin: '*'}))
+
 .use('/', require('./routes/index'))
 
 
+//passport and Github strategy
 passport.use(new GitHubStrategy({
+
     clientID: process.env.GITHUB_CLIENT_ID,
+
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
+
     callbackURL: process.env.CALLBACK_URL
   },
+
 function(accessToken, refreshToken, profile, done) {
    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
       return done(null, profile);
@@ -65,12 +78,17 @@ function(accessToken, refreshToken, profile, done) {
   }
 ));
 
+//serialize
 passport.serializeUser((user, done) => {
+
     done(null, user);});
 
+//deserialize    
 passport.deserializeUser((user, done) => {
+    
     done(null, user);});
 
+//logins
 app.get('/', (req, res) => { res.send(req.session.user !== undefined? `Logged in as ${req.session.user.displayName}` : "Logged Out")});
 
 app.get('/github/callback', passport.authenticate('github', {
