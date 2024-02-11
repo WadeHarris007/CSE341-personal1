@@ -10,10 +10,10 @@ const {isAuthenticated} = require("../middleware/authenticate");
 //Routes:
 
 //Get All route
-router.get('/' , isAuthenticated, carPartsController.getAll);
+router.get('/' , carPartsController.getAll);
 
 //Get Single route
-router.get('/:id' , isAuthenticated, carPartsController.getSingle);
+router.get('/:id' , carPartsController.getSingle);
 
 //Create route
 router.post('/' , isAuthenticated, carPartsController.createcarPart);
