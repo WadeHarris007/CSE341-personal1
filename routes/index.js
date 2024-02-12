@@ -13,13 +13,17 @@ router.get('/', (req, res) => {
 //Require carParts file from routes folder 
 router.use('/carParts' , require('./carParts'));
 
+//Require employees file from folder
+router.use('/employees' , require('./employees'));
+
+//Login
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
-
-router.get('/logout', function(req, res, next) {
+//Logout
+router.get('/logout', (req, res, next) => {
 
   req.logout(function(err) {
-    
+
     if(err) {return next(err);}
     res.redirect('/');
   });

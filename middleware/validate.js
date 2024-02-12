@@ -29,7 +29,43 @@ const savecarParts = (req, res, next) => {
         message: 'Validation failed',
         data: err
       });
-      
+
+    } else {
+      next();
+    }
+  });
+};
+
+const saveEmployees = (req, res, next) => {
+
+  const validationRule = {
+
+    benefits: 'required|string',
+
+    email: 'required|string',
+
+    firstName: 'required|string',
+
+    lastName: 'required|string',
+
+    role: 'required|string',
+
+    salary: 'required|string',
+
+    startDate: 'required|string'
+
+  };
+  
+  validator(req.body, validationRule, {}, (err, status) => {
+
+    if (!status) {
+
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+
     } else {
       next();
     }
@@ -37,5 +73,6 @@ const savecarParts = (req, res, next) => {
 };
 
 module.exports = {
-  savecarParts
+  savecarParts,
+  saveEmployees
 };
